@@ -27,10 +27,10 @@
                 <div class="box-sidebar">
                     
                     <!-- indice 1 -->
-                    <div class="sidebar-indice " id="sidebarInfo">
+                    <div class="sidebar-indice active" id="sidebarInfo">
                         <span class="indice">1</span>
                         <div class="lista">
-                            <p class="texto">STEP 1</p>
+                            <small class="texto">STEP 1</small>
                             <p class="titulo">YOUR INFO</p>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                     <div class="sidebar-indice " id="sidebarPlan">
                         <span class="indice">2</span>
                         <div class="lista">
-                            <p class="texto">STEP 2</p>
+                            <small class="texto">STEP 2</small>
                             <p class="titulo">SELECT PLAN</p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="sidebar-indice " id="sidebarAddOns">
                         <span class="indice">3</span>
                         <div class="lista">
-                            <p class="texto">STEP 3</p>
+                            <small class="texto">STEP 3</small>
                             <p class="titulo">ADD ONS</p>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="sidebar-indice " id="sidebarSummary">
                         <span class="indice">4</span>
                         <div class="lista">
-                            <p class="texto">STEP 4</p>
+                            <small class="texto">STEP 4</small>
                             <p class="titulo">SUMMARY</p>
                         </div>
                     </div>
@@ -66,6 +66,63 @@
             </section>
             <section class="contente">
                 
+                <!-- conteudo 1 -->
+                <div class="box-contente contente-info" id="boxContente">
+                    <h1 class="titulo">Personal info</h1>
+                    <p class="subtitulo">Please provide your name, email address, and phone number.</p>
+                    <form class="form" method="get">
+                        
+                        <div class="linha-form erro" id="linhaForm">
+                            <div class="label">
+                                <label class="label-texto" for="GetName">Name</label>
+                                <span class="notificacao ">This field is required</span>
+                            </div>
+                            <input class="input" type="text" id="GetNome" placeholder="e.g. Stephen King" required>
+                        </div>
+
+                        <div class="linha-form" id="linhaForm">
+                            <div class="label">
+                                <label class="label-texto" for="GetEmail">Email Address</label>
+                                <span class="notificacao ">This field is required</span>
+                            </div>
+                            <input class="input" type="email" name="" id="GetEmail" placeholder="e.g. stephenking@lorem.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        </div>
+
+                        <div class="linha-form" id="linhaForm">
+                            <div class="label">
+                                <label class="label-texto" for="GetFone">Phone Number</label>
+                                <span class="notificacao ">This field is required</span>
+                            </div>
+                            <input class="input" type="text" name="" id="GetFone" placeholder="e.g. +1 234 567 890" required maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                        </div>
+                        
+                    </form>
+               
+                </div>
+
+                <!-- Conteudo 2 -->
+                <div class="box-contente contente-plan active" id="boxContente">
+                    <h1 class="titulo">Select your plan</h1>
+                    <p class="subtitulo">You have the option of monthly or yearly billing.</p>
+                    <div class="box-plano">
+                        <a href="#" class="btn-plan" id="btnArcad">
+                            <img class="img" src="./assets/img/icon-arcade.svg" alt="">
+                            <p class="titulo">Arcade</p>
+                            <small class="texto texto-mensal active">$9/mo</small>
+                            <small class="texto texto-anual">$90/yr</small>
+                            <p class="texto-bonus">2 months free</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rodape -->
+                <footer class="footer">
+                    <span>
+                        <button class="btn-back btn" id="btnBack">Go Back</button>
+                    </span>
+                    <button class="btn-next btn" id="btnNext">Next Step</button>
+                </footer>
+
             </section>
         </section>
     </main>

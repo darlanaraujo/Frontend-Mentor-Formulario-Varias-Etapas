@@ -5,6 +5,7 @@
   font-size: 16px;
   font-family: 'Ubuntu', sans-serif;
   letter-spacing: .8px;
+  text-decoration: none;
 }
 
 .page {
@@ -14,6 +15,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s all;
+}
+
+@media (max-width: 780px) {
+  .page {
+    background: url("../assets/img/bg-sidebar-mobile.svg");
+    background-color: #f0f6ff;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 1s all;
+  }
 }
 
 .page .modal {
@@ -23,20 +36,48 @@
   border-radius: 15px;
   box-shadow: 1px 1px 10px 5px rgba(150, 153, 171, 0.2);
   padding: 15px;
+  margin: 20px;
   display: grid;
   grid-template-columns: 273px 1fr;
+  transition: 1s all;
+}
+
+@media (max-width: 780px) {
+  .page .modal {
+    display: block;
+  }
 }
 
 .page .modal .sidebar {
   max-height: 567px;
   background-image: url("../assets/img/bg-sidebar-desktop.svg");
   padding: 40px 30px;
+  transition: 1s all;
+}
+
+@media (max-width: 780px) {
+  .page .modal .sidebar {
+    width: 85%;
+    position: absolute;
+    background: none;
+    top: 0;
+  }
 }
 
 .page .modal .sidebar .box-sidebar {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  transition: 1s all;
+}
+
+@media (max-width: 780px) {
+  .page .modal .sidebar .box-sidebar {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .page .modal .sidebar .box-sidebar .sidebar-indice {
@@ -66,8 +107,122 @@
   display: block;
 }
 
+@media (max-width: 780px) {
+  .page .modal .sidebar .box-sidebar .sidebar-indice .lista {
+    display: none;
+  }
+}
+
 .page .modal .sidebar .box-sidebar .sidebar-indice .lista .texto {
   font-size: 13px;
   font-weight: 100;
   opacity: .5;
+}
+
+.page .modal .contente {
+  padding: 60px 100px;
+}
+
+@media (max-width: 780px) {
+  .page .modal .contente {
+    padding: 40px 20px;
+  }
+}
+
+.page .modal .contente .box-contente {
+  display: none;
+  transition: 1s all;
+}
+
+.page .modal .contente .box-contente.active {
+  display: block;
+}
+
+.page .modal .contente .box-contente .titulo {
+  font-size: 2em;
+  color: #02295a;
+  margin-bottom: 15px;
+}
+
+.page .modal .contente .box-contente .subtitulo {
+  font-size: 15px;
+  color: #9699ab;
+  font-weight: 300;
+}
+
+.page .modal .contente .contente-info .form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page .modal .contente .contente-info .form .linha-form .label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.page .modal .contente .contente-info .form .linha-form .label .label-texto {
+  font-size: 14px;
+  color: #02295a;
+}
+
+.page .modal .contente .contente-info .form .linha-form .label .notificacao {
+  font-size: 14px;
+  color: #ed3548;
+  font-weight: bold;
+  display: none;
+}
+
+.page .modal .contente .contente-info .form .linha-form .input {
+  width: 100%;
+  height: 50px;
+  border: solid 1px #9699ab;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #02295a;
+}
+
+.page .modal .contente .contente-info .form .linha-form .input:focus {
+  outline: 1px solid #02295a;
+  cursor: pointer;
+}
+
+.page .modal .contente .contente-info .form .linha-form.erro .notificacao {
+  display: block;
+}
+
+.page .modal .contente .contente-info .form .linha-form.erro .input {
+  border-color: #ed3548;
+}
+
+.page .modal .contente .footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.page .modal .contente .footer .btn {
+  padding: 15px 20px;
+  background-color: #02295a;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.page .modal .contente .footer .btn:hover {
+  background-color: #14448d;
+}
+
+.page .modal .contente .footer .btn-back {
+  background: none;
+  color: #9699ab;
+  display: none;
+}
+
+.page .modal .contente .footer .btn-back:hover {
+  background: none;
+  color: #02295a;
 }

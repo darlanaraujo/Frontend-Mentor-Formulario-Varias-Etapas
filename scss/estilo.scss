@@ -1,5 +1,6 @@
 @import 'padrao';
 @import 'cores';
+@import 'mobile';
 
 .page {
     width: 100%;
@@ -8,6 +9,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 1s all;
+
+    @include mobile {
+        background: url('../assets/img/bg-sidebar-mobile.svg');
+        background-color: $magnolia;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: 1s all;
+    }
 
     .modal {
         width: 940px;
@@ -16,18 +27,41 @@
         border-radius: 15px;
         box-shadow: 1px 1px 10px 5px rgba($cinzaFrio, .2);
         padding: 15px;
+        margin: 20px;
         display: grid;
         grid-template-columns: 273px 1fr;
+        transition: 1s all;
+
+        @include mobile {
+            display: block;
+        }
 
         .sidebar {
             max-height: 567px;
             background-image: url('../assets/img/bg-sidebar-desktop.svg');
             padding: 40px 30px;
+            transition: 1s all;
+
+            @include mobile {
+                // display: none;
+                width: 85%;
+                position: absolute;
+                background: none;
+                top: 0;
+            }
 
             .box-sidebar {
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
+                transition: 1s all;
+
+                @include mobile {
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: center;
+                }
                 
                 .sidebar-indice {
                     display: flex;
@@ -57,11 +91,136 @@
                     .lista {
                         display: block;
 
+                        @include mobile {
+                            display: none;
+                        }
+
                         .texto {
                             font-size: 13px;
                             font-weight: 100;
                             opacity: .5;
                         }
+                    }
+                }
+            }
+
+        }
+
+        .contente {
+            padding: 60px 100px;
+            
+
+            @include mobile {
+                padding: 40px 20px;
+            }
+
+            // Estilo para todos os box-contente
+            .box-contente {
+                display: none;
+                transition: 1s all;
+
+                &.active {
+                    display: block;
+                }
+
+                .titulo {
+                    font-size: 2em;
+                    color: $azulMarinho;
+                    margin-bottom: 15px;
+                }
+    
+                .subtitulo {
+                    font-size: 15px;
+                    color: $cinzaFrio;
+                    font-weight: 300;
+                }
+            }
+
+            .contente-info {
+                .form {
+                    margin-top: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .linha-form {
+
+                        .label {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 10px;
+                            
+                            .label-texto {
+                                font-size: 14px;
+                                color: $azulMarinho;
+                            }
+                            
+                            .notificacao {
+                                font-size: 14px;
+                                color: $vermelhoMorango;
+                                font-weight: bold;
+                                display: none;
+                            }
+                        }
+                        
+                        .input {
+                            width: 100%;
+                            height: 50px;
+                            border: solid 1px $cinzaFrio;
+                            border-radius: 10px;
+                            padding: 10px 20px;
+                            color: $azulMarinho;
+                            
+                            &:focus {
+                                outline: 1px solid $azulMarinho;
+                                cursor: pointer;
+                            }
+                        }
+
+                        &.erro {
+                            .notificacao {
+                                display: block;
+                            }
+
+                            .input {
+                                border-color: $vermelhoMorango;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contente-plan {
+                
+            }
+            
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 40px;
+
+                .btn {
+                    padding: 15px 20px;
+                    background-color: $azulMarinho;
+                    border: none;
+                    border-radius: 10px;
+                    color: $branco;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $azulMarinhoClaro;
+                    }
+                }
+
+                .btn-back {
+                    background: none;
+                    color: $cinzaFrio;
+                    display: none;
+
+                    &:hover {
+                        background: none;
+                        color: $azulMarinho;
                     }
                 }
             }
