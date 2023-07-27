@@ -1,2 +1,70 @@
 @import 'padrao';
+@import 'cores';
 
+.page {
+    width: 100%;
+    height: 100vh;
+    background-color: $magnolia;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        width: 940px;
+        height: 600px;
+        background-color: $branco;
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px 5px rgba($cinzaFrio, .2);
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 273px 1fr;
+
+        .sidebar {
+            max-height: 567px;
+            background-image: url('../assets/img/bg-sidebar-desktop.svg');
+            padding: 40px 30px;
+
+            .box-sidebar {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                
+                .sidebar-indice {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    color: $branco;
+                    transition: 1s all;
+
+                    &.active {
+                        .indice {
+                            background-color: $magnolia;
+                            color: $azulMarinho;
+                        }
+                    }
+
+                    .indice {
+                        border: 1px solid $branco;
+                        border-radius: 100%;
+                        width: 32px;
+                        height: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
+
+                    .lista {
+                        display: block;
+
+                        .texto {
+                            font-size: 13px;
+                            font-weight: 100;
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
