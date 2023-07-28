@@ -133,12 +133,12 @@
                     font-size: 15px;
                     color: $cinzaFrio;
                     font-weight: 300;
+                    margin-bottom: 45px;
                 }
             }
 
             .contente-info {
                 .form {
-                    margin-top: 50px;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
@@ -191,7 +191,56 @@
             }
 
             .contente-plan {
-                
+
+                .box-plan {
+                    display: flex;
+                    justify-content: space-around;
+
+                    .btn-plan {
+                        width: 137px;
+                        min-height: 158px;
+                        max-height: 182px;
+                        padding: 15px;
+                        border: 1px solid $cinzaFrio;
+                        border-radius: 10px;
+
+                        .img {
+                            width: 40px;
+                            margin-bottom: 37px;
+                        }
+
+                        .titulo {
+                            font-size: 17px;
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                        }
+
+                        .plano {
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
+                        }
+
+                        .texto {
+                            color: $cinzaFrio;
+                            font-weight: 200;
+                            font-size: 15px;
+                            // margin-bottom: 10px;
+                        }
+
+                        .texto-bonus {
+                            color: $azulMarinho;
+                            font-size: 12px;
+                            margin-top: 10px;
+                        }
+
+                        &:focus, &:hover {
+                            border: 1px solid $azulMarinho;
+                        }
+                    }
+                }
             }
             
 

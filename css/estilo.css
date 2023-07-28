@@ -148,10 +148,10 @@
   font-size: 15px;
   color: #9699ab;
   font-weight: 300;
+  margin-bottom: 45px;
 }
 
 .page .modal .contente .contente-info .form {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -195,6 +195,55 @@
 
 .page .modal .contente .contente-info .form .linha-form.erro .input {
   border-color: #ed3548;
+}
+
+.page .modal .contente .contente-plan .box-plan {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan {
+  width: 137px;
+  min-height: 158px;
+  max-height: 182px;
+  padding: 15px;
+  border: 1px solid #9699ab;
+  border-radius: 10px;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .img {
+  width: 40px;
+  margin-bottom: 37px;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .titulo {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .plano {
+  display: none;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .plano.active {
+  display: block;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .texto {
+  color: #9699ab;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan .texto-bonus {
+  color: #02295a;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan:focus, .page .modal .contente .contente-plan .box-plan .btn-plan:hover {
+  border: 1px solid #02295a;
 }
 
 .page .modal .contente .footer {
