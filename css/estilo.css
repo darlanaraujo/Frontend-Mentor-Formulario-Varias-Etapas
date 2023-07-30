@@ -120,7 +120,10 @@
 }
 
 .page .modal .contente {
-  padding: 60px 100px;
+  padding: 40px 100px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 780px) {
@@ -202,6 +205,13 @@
   justify-content: space-around;
 }
 
+@media (max-width: 780px) {
+  .page .modal .contente .contente-plan .box-plan {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 .page .modal .contente .contente-plan .box-plan .btn-plan {
   width: 137px;
   min-height: 158px;
@@ -211,9 +221,27 @@
   border-radius: 10px;
 }
 
+@media (max-width: 780px) {
+  .page .modal .contente .contente-plan .box-plan .btn-plan {
+    width: 100%;
+    height: 100%;
+    min-width: max-content;
+    min-height: min-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .page .modal .contente .contente-plan .box-plan .btn-plan .img {
   width: 40px;
   margin-bottom: 37px;
+}
+
+@media (max-width: 780px) {
+  .page .modal .contente .contente-plan .box-plan .btn-plan .img {
+    margin: 0;
+  }
 }
 
 .page .modal .contente .contente-plan .box-plan .btn-plan .titulo {
@@ -242,8 +270,79 @@
   margin-top: 10px;
 }
 
-.page .modal .contente .contente-plan .box-plan .btn-plan:focus, .page .modal .contente .contente-plan .box-plan .btn-plan:hover {
+.page .modal .contente .contente-plan .box-plan .btn-plan:focus {
   border: 1px solid #02295a;
+  background-color: #f0f6ff;
+}
+
+.page .modal .contente .contente-plan .box-plan .btn-plan:hover {
+  border: 1px solid #02295a;
+}
+
+.page .modal .contente .contente-plan .seletor {
+  margin: 25px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #f0f6ff;
+  height: 50px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.page .modal .contente .contente-plan .seletor .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.page .modal .contente .contente-plan .seletor .switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.page .modal .contente .contente-plan .seletor .switch .input:checked + .slider::before {
+  transform: translate(20px);
+  -webkit-transform: translate(20px);
+  -ms-transform: translate(20px);
+}
+
+.page .modal .contente .contente-plan .seletor .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #02295a;
+  border-radius: 34px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.page .modal .contente .contente-plan .seletor .switch .slider::before {
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.page .modal .contente .contente-plan .seletor .texto {
+  font-size: 14px;
+  color: #9699ab;
+}
+
+.page .modal .contente .contente-plan .seletor .texto.active {
+  color: #02295a;
 }
 
 .page .modal .contente .footer {
@@ -252,11 +351,22 @@
   margin-top: 40px;
 }
 
+@media (max-width: 780px) {
+  .page .modal .contente .footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+  }
+}
+
 .page .modal .contente .footer .btn {
   padding: 15px 20px;
   background-color: #02295a;
   border: none;
-  border-radius: 10px;
+  border-radius: 7px;
   color: white;
   cursor: pointer;
 }
@@ -269,6 +379,10 @@
   background: none;
   color: #9699ab;
   display: none;
+}
+
+.page .modal .contente .footer .btn-back.active {
+  display: block;
 }
 
 .page .modal .contente .footer .btn-back:hover {
