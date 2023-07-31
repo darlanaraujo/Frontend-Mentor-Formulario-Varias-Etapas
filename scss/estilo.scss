@@ -14,10 +14,12 @@
     @include mobile {
         background: url('../assets/img/bg-sidebar-mobile.svg');
         background-color: $magnolia;
-        background-position: top;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: contain;
         transition: 1s all;
+        align-items: flex-start;
+        
     }
 
     .modal {
@@ -35,6 +37,7 @@
         @include mobile {
             display: block;
             height: max-content;
+            margin-top: 120px;
         }
 
         .sidebar {
@@ -131,6 +134,10 @@
                     font-size: 2em;
                     color: $azulMarinho;
                     margin-bottom: 15px;
+
+                    @include mobile {
+                        font-size: 1.5em;
+                    }
                 }
     
                 .subtitulo {
@@ -524,11 +531,43 @@
                 }
             }
 
+            // Tela Thanks
+            .contente-thanks {
+                height: 100%;
+
+                .box-thanks {
+                    height: 100%;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .img {
+                        margin-bottom: 30px;
+
+                        @include mobile {
+                            width: 60px;
+
+                        }
+                    }
+
+                    .subtitulo {
+                        line-height: 20px;
+                    }
+                }
+            }
+
+
             // Rodapé
             .footer {
                 display: flex;
                 justify-content: space-between;
                 margin-top: 40px;
+
+                &.exit {
+                    display: none;
+                }
 
                 @include mobile {
                     position: absolute;
