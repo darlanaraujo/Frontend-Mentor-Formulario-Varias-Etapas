@@ -316,6 +316,17 @@
                     }
                 }
 
+                .texto-erro {
+                    text-align: center;
+                    margin-top: 10px;
+                    color: $vermelhoMorango;
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+
                 .seletor {
                     margin: 25px 10px;
                     display: flex;
@@ -399,13 +410,14 @@
                         border-radius: 10px;
                         cursor: pointer;
 
+                        &.active {
+                            border-color: $roxo;
+                            background-color: $magnolia;
+                        }
+
                         &:hover {
                             border-color: $roxo;
                         }
-
-                        // & input[type='checkbox']:checked {
-                        //     background-color: $magnolia;
-                        // }
 
                         .coluna {
                             display: flex;
@@ -425,6 +437,11 @@
                                 font-size: 15px;
 
                             }
+                        }
+
+                        .valor {
+                            color: $roxo;
+                            font-weight: 200;
                         }
                     }
                 }

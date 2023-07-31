@@ -321,6 +321,17 @@
   border: 1px solid #02295a;
 }
 
+.page .modal .contente .contente-plan .texto-erro {
+  text-align: center;
+  margin-top: 10px;
+  color: #ed3548;
+  display: none;
+}
+
+.page .modal .contente .contente-plan .texto-erro.active {
+  display: block;
+}
+
 .page .modal .contente .contente-plan .seletor {
   margin: 25px 10px;
   display: flex;
@@ -402,6 +413,11 @@
   cursor: pointer;
 }
 
+.page .modal .contente .contente-add .box-add .label-add.active {
+  border-color: #473dff;
+  background-color: #f0f6ff;
+}
+
 .page .modal .contente .contente-add .box-add .label-add:hover {
   border-color: #473dff;
 }
@@ -421,6 +437,11 @@
 .page .modal .contente .contente-add .box-add .label-add .coluna .texto {
   color: #9699ab;
   font-size: 15px;
+}
+
+.page .modal .contente .contente-add .box-add .label-add .valor {
+  color: #473dff;
+  font-weight: 200;
 }
 
 .page .modal .contente .footer {

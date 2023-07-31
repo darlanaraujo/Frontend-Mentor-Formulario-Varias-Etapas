@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Tela Plan -->
-                <div class="box-contente contente-plan " id="boxContente"> <!-- active -->
+                <div class="box-contente contente-plan active" id="boxContente"> <!-- active -->
                     <h1 class="titulo">Select your plan</h1>
                     <p class="subtitulo">You have the option of monthly or yearly billing.</p>
                     <div class="box-plan">
@@ -150,6 +150,7 @@
                             </div>
                         </a>
                     </div>
+                    <p class="texto-erro">Please select a plan</p> <!-- active -->
                     <div class="seletor">
                         <p class="texto active">Monthly</p> <!-- active -->
                         <label class="switch">
@@ -161,14 +162,14 @@
                 </div>
 
                 <!-- Tela Add-ons -->
-                <div class="box-contente contente-add active"> <!-- active -->
+                <div class="box-contente contente-add "> <!-- active -->
                     <h1 class="titulo">Pick add-ons</h1>
                     <p class="subtitulo">Add-ons help enhance your gaming experience.</p>
                     <div class="box-add">
-                        <label class="label-add" for="checkOnlineService">
+                        <label class="label-add " for="checkService"> <!-- active -->
                             <div class="coluna">
                                 <label class="container-checkbox">
-                                    <input type="checkbox" id="checkOnlineService">
+                                    <input type="checkbox" id="checkService">
                                     <span class="checkmark"></span>
                                 </label>
                                 <div>
@@ -177,10 +178,41 @@
                                 </div>
                             </div>
                             <p class="valor">+$1/mo</p>
+                        </label>
 
+                        <label class="label-add " for="checkStorage"> <!-- active -->
+                            <div class="coluna">
+                                <label class="container-checkbox">
+                                    <input type="checkbox" id="checkStorage">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div>
+                                    <p class="titulo">Larger storage</p>
+                                    <p class="texto">Extra 1TB of cloud save</p>
+                                </div>
+                            </div>
+                            <p class="valor">+$2/mo</p>
+                        </label>
+
+                        <label class="label-add " for="checkProfile"> <!-- active -->
+                            <div class="coluna">
+                                <label class="container-checkbox">
+                                    <input type="checkbox" id="checkProfile">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div>
+                                    <p class="titulo">Customizable profile</p>
+                                    <p class="texto">Custom theme on your profile</p>
+                                </div>
+                            </div>
+                            <p class="valor">+$2/mo</p>
                         </label>
                     </div>
                 </div> 
+
+                <!-- Tela Finishing -->
+               
+
 
                 <!-- Rodape -->
                 <footer class="footer">
