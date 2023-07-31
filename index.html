@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Tela Plan -->
-                <div class="box-contente contente-plan active" id="boxContente"> <!-- active -->
+                <div class="box-contente contente-plan " id="boxContente"> <!-- active -->
                     <h1 class="titulo">Select your plan</h1>
                     <p class="subtitulo">You have the option of monthly or yearly billing.</p>
                     <div class="box-plan">
@@ -211,7 +211,32 @@
                 </div> 
 
                 <!-- Tela Finishing -->
-               
+               <div class="box-contente contente-finishing active"> <!-- active -->
+                    <h1 class="titulo">Finishing up</h1>
+                    <p class="subtitulo">Double-check everything looks OK before confirming.</p>
+                    <div class="box-finishing">
+                        <div class="box-resumo">
+                            <div class="plano">
+                                <div class="coluna">
+                                    <p class="texto-plano" id="planoEscolhido">Plano (<span id="planoEscolhido">Monthly</span>)</p>
+                                    <a class="btn-reinicio" id="btnReinicio" href="#">Change</a>
+                                </div>
+                                <p class="valor-plano" id="valorPlanoEscolhido">$<span id="valorPlano">0</span>/<span id="periodoPlano">mo</span></p>
+                            </div>
+                            <div class="add">
+                                <!-- Estrutura que deve ser criada no JS -->
+                                <div class="add">
+                                    <p class="texto-add">teste</p>
+                                    <p class="valor-add">+$ <span id="valorAdd">0</span>/<span id="periodoAdd">mo</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-total">
+                            <p class="texto-total">Total (per <span class="periodoTotal">month</span>)</p>
+                            <p class="valor-total">+$<span id="valorTotal">0</span>/<span id="periodoTotal">mo</span></p>
+                        </div>
+                    </div>
+               </div>
 
 
                 <!-- Rodape -->
@@ -219,7 +244,7 @@
                     <span>
                         <button class="btn-back btn active" id="btnBack">Go Back</button> <!-- active -->
                     </span>
-                    <button class="btn-next btn" id="btnNext">Next Step</button>
+                    <button class="btn-next btn " id="btnNext">Next Step</button> <!-- confirm -->
                 </footer>
 
             </section>

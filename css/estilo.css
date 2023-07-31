@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
   font-family: 'Ubuntu', sans-serif;
   letter-spacing: .8px;
   text-decoration: none;
@@ -444,6 +443,79 @@
   font-weight: 200;
 }
 
+.page .modal .contente .contente-finishing .box-resumo {
+  background-color: #f0f6ff;
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 300;
+  color: #9699ab;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .plano {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #02295a;
+  font-weight: 700;
+  border-bottom: 1px solid #9699ab;
+  padding-bottom: 20px;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .plano .texto-plano {
+  margin-bottom: 10px;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .plano .btn-reinicio {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9699ab;
+  text-decoration: underline;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .plano .btn-reinicio:hover {
+  color: #473dff;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .add {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .add .texto-add {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9699ab;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .add .valor-add {
+  font-size: 14px;
+  font-weight: 400;
+  color: #02295a;
+}
+
+.page .modal .contente .contente-finishing .box-total {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page .modal .contente .contente-finishing .box-total .texto-total {
+  font-size: 14px;
+  color: #9699ab;
+  font-weight: 400;
+}
+
+.page .modal .contente .contente-finishing .box-total .valor-total {
+  color: #473dff;
+  font-weight: 700;
+  font-size: 18px !important;
+}
+
 .page .modal .contente .footer {
   display: flex;
   justify-content: space-between;
@@ -472,6 +544,14 @@
 
 .page .modal .contente .footer .btn:hover {
   background-color: #14448d;
+}
+
+.page .modal .contente .footer .btn.confirm {
+  background-color: #473dff;
+}
+
+.page .modal .contente .footer .btn.confirm:hover {
+  opacity: .7;
 }
 
 .page .modal .contente .footer .btn-back {

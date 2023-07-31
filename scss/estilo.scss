@@ -447,6 +447,83 @@
                 }
             }
 
+            // Tela Finishing
+            .contente-finishing {
+
+                .box-resumo {
+                    background-color: $magnolia;
+                    padding: 20px;
+                    border-radius: 10px;
+                    font-weight: 300;
+                    color: $cinzaFrio;
+
+                    .plano {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        color: $azulMarinho;
+                        font-weight: 700;
+                        border-bottom: 1px solid $cinzaFrio;
+                        padding-bottom: 20px;
+
+                        .texto-plano {
+                            margin-bottom: 10px;
+                        }
+                        
+                        .btn-reinicio {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: $cinzaFrio;
+                            text-decoration: underline;
+
+                            &:hover {
+                                color: $roxo;
+                            }
+                        }
+                    }
+
+                    .add {
+                        margin-top: 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        
+                        .texto-add {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: $cinzaFrio;
+                        }
+
+                        .valor-add {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: $azulMarinho;
+                        }
+                    }
+                }
+
+                .box-total {
+                    padding: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .texto-total {
+                        font-size: 14px;
+                        color: $cinzaFrio;
+                        font-weight: 400;
+                    }
+
+                    .valor-total {
+                        color: $roxo;
+                        font-weight: 700;
+                        font-size: 18px !important;
+                    }
+                }
+            }
+
             // Rodapé
             .footer {
                 display: flex;
@@ -472,6 +549,14 @@
 
                     &:hover {
                         background-color: $azulMarinhoClaro;
+                    }
+
+                    &.confirm {
+                        background-color: $roxo;
+
+                        &:hover {
+                            opacity: .7;
+                        }
                     }
                 }
 
