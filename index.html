@@ -66,8 +66,8 @@
             </section>
             <section class="contente">
                 
-                <!-- conteudo 1 -->
-                <div class="box-contente contente-info" id="boxContente">
+                <!-- Tela Info -->
+                <div class="box-contente contente-info " id="boxContente"> <!-- active -->
                     <h1 class="titulo">Personal info</h1>
                     <p class="subtitulo">Please provide your name, email address, and phone number.</p>
                     <form class="form" method="get">
@@ -100,8 +100,8 @@
                
                 </div>
 
-                <!-- Conteudo 2 -->
-                <div class="box-contente contente-plan active" id="boxContente">
+                <!-- Tela Plan -->
+                <div class="box-contente contente-plan " id="boxContente"> <!-- active -->
                     <h1 class="titulo">Select your plan</h1>
                     <p class="subtitulo">You have the option of monthly or yearly billing.</p>
                     <div class="box-plan">
@@ -159,6 +159,28 @@
                         <p class="texto">Yearly</p> <!-- active -->
                     </div>
                 </div>
+
+                <!-- Tela Add-ons -->
+                <div class="box-contente contente-add active"> <!-- active -->
+                    <h1 class="titulo">Pick add-ons</h1>
+                    <p class="subtitulo">Add-ons help enhance your gaming experience.</p>
+                    <div class="box-add">
+                        <label class="label-add" for="checkOnlineService">
+                            <div class="coluna">
+                                <label class="container-checkbox">
+                                    <input type="checkbox" id="checkOnlineService">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <div>
+                                    <p class="titulo">Online service</p>
+                                    <p class="texto">Access to multiplayer games</p>
+                                </div>
+                            </div>
+                            <p class="valor">+$1/mo</p>
+
+                        </label>
+                    </div>
+                </div> 
 
                 <!-- Rodape -->
                 <footer class="footer">

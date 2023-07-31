@@ -34,6 +34,7 @@
 
         @include mobile {
             display: block;
+            height: max-content;
         }
 
         .sidebar {
@@ -138,8 +139,52 @@
                     font-weight: 300;
                     margin-bottom: 45px;
                 }
+
+                .container-checkbox {
+                    position: relative;
+                    cursor: pointer;
+
+                    & input[type=checkbox] {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+
+                        &:checked + .checkmark {
+                            background-color: $roxo;
+                            border-color: $roxo;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 5px;
+                                top: 3px;
+                                width: 5px;
+                                height: 10px;
+                                border: solid $branco;
+                                border-width: 0 3px 3px 0;
+                                transform: rotate(45deg);
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                            }
+                        }
+                    }
+
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 23px;
+                        background-color: $branco;
+                        border-radius: 5px;
+                        border: 1px solid $cinzaFrio;
+
+                        
+                    }
+                }
             }
 
+            // Tela Info
             .contente-info {
                 .form {
                     display: flex;
@@ -193,6 +238,7 @@
                 }
             }
 
+            // Tela Plan
             .contente-plan {
 
                 .box-plan {
@@ -337,7 +383,54 @@
                 }
             }
             
+            // Tela Add-ons
+            .contente-add {
+                
+                .box-add {
+                    display: grid;
+                    gap: 15px;
 
+                    .label-add {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border: 1px solid $cinzaFrio;
+                        padding: 20px;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            border-color: $roxo;
+                        }
+
+                        // & input[type='checkbox']:checked {
+                        //     background-color: $magnolia;
+                        // }
+
+                        .coluna {
+                            display: flex;
+                            align-items: center;
+                            gap: 30px;
+
+                            
+
+                            .titulo {
+                                font-size: 16px;
+                                margin-bottom: 7px;
+                                font-weight: 500;
+                            }
+
+                            .texto {
+                                color: $cinzaFrio;
+                                font-size: 15px;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Rodapé
             .footer {
                 display: flex;
                 justify-content: space-between;

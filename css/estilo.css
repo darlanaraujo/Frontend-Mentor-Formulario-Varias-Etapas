@@ -45,6 +45,7 @@
 @media (max-width: 780px) {
   .page .modal {
     display: block;
+    height: max-content;
   }
 }
 
@@ -152,6 +153,47 @@
   color: #9699ab;
   font-weight: 300;
   margin-bottom: 45px;
+}
+
+.page .modal .contente .box-contente .container-checkbox {
+  position: relative;
+  cursor: pointer;
+}
+
+.page .modal .contente .box-contente .container-checkbox input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.page .modal .contente .box-contente .container-checkbox input[type=checkbox]:checked + .checkmark {
+  background-color: #473dff;
+  border-color: #473dff;
+}
+
+.page .modal .contente .box-contente .container-checkbox input[type=checkbox]:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+.page .modal .contente .box-contente .container-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 23px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #9699ab;
 }
 
 .page .modal .contente .contente-info .form {
@@ -343,6 +385,42 @@
 
 .page .modal .contente .contente-plan .seletor .texto.active {
   color: #02295a;
+}
+
+.page .modal .contente .contente-add .box-add {
+  display: grid;
+  gap: 15px;
+}
+
+.page .modal .contente .contente-add .box-add .label-add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #9699ab;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.page .modal .contente .contente-add .box-add .label-add:hover {
+  border-color: #473dff;
+}
+
+.page .modal .contente .contente-add .box-add .label-add .coluna {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.page .modal .contente .contente-add .box-add .label-add .coluna .titulo {
+  font-size: 16px;
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.page .modal .contente .contente-add .box-add .label-add .coluna .texto {
+  color: #9699ab;
+  font-size: 15px;
 }
 
 .page .modal .contente .footer {
