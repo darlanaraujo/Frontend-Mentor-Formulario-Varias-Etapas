@@ -27,7 +27,7 @@
                 <div class="box-sidebar">
                     
                     <!-- indice 1 -->
-                    <div class="sidebar-indice active" id="sidebarInfo">
+                    <div class="sidebar-indice " id="sidebarIndice"> <!-- active -->
                         <span class="indice">1</span>
                         <div class="lista">
                             <small class="texto">STEP 1</small>
@@ -36,7 +36,7 @@
                     </div>
 
                     <!-- indice 2 -->
-                    <div class="sidebar-indice " id="sidebarPlan">
+                    <div class="sidebar-indice " id="sidebarIndice"> <!-- active -->
                         <span class="indice">2</span>
                         <div class="lista">
                             <small class="texto">STEP 2</small>
@@ -45,7 +45,7 @@
                     </div>
 
                     <!-- indice 3 -->
-                    <div class="sidebar-indice " id="sidebarAddOns">
+                    <div class="sidebar-indice " id="sidebarIndice"> <!-- active -->
                         <span class="indice">3</span>
                         <div class="lista">
                             <small class="texto">STEP 3</small>
@@ -54,7 +54,7 @@
                     </div>
 
                     <!-- indice 4 -->
-                    <div class="sidebar-indice " id="sidebarSummary">
+                    <div class="sidebar-indice " id="sidebarIndice"> <!-- active -->
                         <span class="indice">4</span>
                         <div class="lista">
                             <small class="texto">STEP 4</small>
@@ -67,33 +67,33 @@
             <section class="contente">
                 
                 <!-- Tela Info -->
-                <div class="box-contente contente-info active" id="boxContente"> <!-- active -->
+                <div class="box-contente contente-info " id="telaContente"> <!-- active -->
                     <h1 class="titulo">Personal info</h1>
                     <p class="subtitulo">Please provide your name, email address, and phone number.</p>
                     <form class="form" method="get">
                         
-                        <div class="linha-form erro" id="linhaForm">
+                        <div class="linha-form " id="linhaForm"> <!-- erro -->
                             <div class="label">
-                                <label class="label-texto" for="GetName">Name</label>
+                                <label class="label-texto" for="getInput">Name</label>
                                 <span class="notificacao ">This field is required</span>
                             </div>
-                            <input class="input" type="text" id="GetNome" placeholder="e.g. Stephen King" required>
+                            <input class="input" type="text" id="getInput" placeholder="e.g. Stephen King" required>
                         </div>
 
-                        <div class="linha-form" id="linhaForm">
+                        <div class="linha-form " id="linhaForm"> <!-- erro -->
                             <div class="label">
-                                <label class="label-texto" for="GetEmail">Email Address</label>
+                                <label class="label-texto" for="getInput">Email Address</label>
                                 <span class="notificacao ">This field is required</span>
                             </div>
-                            <input class="input" type="email" name="" id="GetEmail" placeholder="e.g. stephenking@lorem.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <input class="input" type="email" name="" id="getInput" placeholder="e.g. stephenking@lorem.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                         </div>
 
-                        <div class="linha-form" id="linhaForm">
+                        <div class="linha-form " id="linhaForm"> <!-- erro -->
                             <div class="label">
-                                <label class="label-texto" for="GetFone">Phone Number</label>
+                                <label class="label-texto" for="getInput">Phone Number</label>
                                 <span class="notificacao ">This field is required</span>
                             </div>
-                            <input class="input" type="text" name="" id="GetFone" placeholder="e.g. +1 234 567 890" required maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                            <input class="input" type="text" name="" id="getInput" placeholder="e.g. +1 234 567 890" required maxlength="10" minlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                         </div>
                         
                     </form>
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Tela Plan -->
-                <div class="box-contente contente-plan " id="boxContente"> <!-- active -->
+                <div class="box-contente contente-plan " id="telaContente"> <!-- active -->
                     <h1 class="titulo">Select your plan</h1>
                     <p class="subtitulo">You have the option of monthly or yearly billing.</p>
                     <div class="box-plan">
@@ -162,7 +162,7 @@
                 </div>
 
                 <!-- Tela Add-ons -->
-                <div class="box-contente contente-add "> <!-- active -->
+                <div class="box-contente contente-add " id="telaContente"> <!-- active -->
                     <h1 class="titulo">Pick add-ons</h1>
                     <p class="subtitulo">Add-ons help enhance your gaming experience.</p>
                     <div class="box-add">
@@ -211,7 +211,7 @@
                 </div> 
 
                 <!-- Tela Finishing -->
-               <div class="box-contente contente-finishing "> <!-- active -->
+               <div class="box-contente contente-finishing " id="telaContente"> <!-- active -->
                     <h1 class="titulo">Finishing up</h1>
                     <p class="subtitulo">Double-check everything looks OK before confirming.</p>
                     <div class="box-finishing">
@@ -239,7 +239,7 @@
                </div>
 
                <!-- Tela Thanks -->
-               <div class="box-contente contente-thanks ">
+               <div class="box-contente contente-thanks " id="telaContente">
                     <div class="box-thanks">
 
                         <img class="img" src="./assets/img/icon-thank-you.svg" alt="">
@@ -251,9 +251,9 @@
                </div>
 
                 <!-- Rodape -->
-                <footer class="footer exit"> <!-- exit -->
+                <footer class="footer "> <!-- exit -->
                     <span>
-                        <button class="btn-back btn active" id="btnBack">Go Back</button> <!-- active -->
+                        <button class="btn-back btn " id="btnBack">Go Back</button> <!-- active -->
                     </span>
                     <button class="btn-next btn " id="btnNext">Next Step</button> <!-- confirm -->
                 </footer>
