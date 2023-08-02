@@ -296,6 +296,7 @@
 
                             &.active {
                                 display: block;
+                                transition: 1s all;
                             }
                         }
 
@@ -312,7 +313,7 @@
                             margin-top: 10px;
                         }
 
-                        &:focus {
+                        &:focus, &.active {
                             border: 1px solid $azulMarinho;
                             background-color: $magnolia;
                         }

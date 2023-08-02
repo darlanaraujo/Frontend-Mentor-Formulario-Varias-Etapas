@@ -305,6 +305,7 @@
 
 .page .modal .contente .contente-plan .box-plan .btn-plan .plano.active {
   display: block;
+  transition: 1s all;
 }
 
 .page .modal .contente .contente-plan .box-plan .btn-plan .texto {
@@ -319,7 +320,7 @@
   margin-top: 10px;
 }
 
-.page .modal .contente .contente-plan .box-plan .btn-plan:focus {
+.page .modal .contente .contente-plan .box-plan .btn-plan:focus, .page .modal .contente .contente-plan .box-plan .btn-plan.active {
   border: 1px solid #02295a;
   background-color: #f0f6ff;
 }
