@@ -22,8 +22,9 @@ const textoPlano = document.querySelectorAll('#textoPlano');
 let indice = 0;
 let janela = 0;
 
-let nome, email, fone, plano;
-let periodo = 'monthly';
+let nome, email, fone;
+let plano = 'Monthly'
+let periodo = 'Monthly';
 let valor = 0;
 
 // Funções
@@ -124,7 +125,7 @@ const telaPlan = () => {
             planoAnual.forEach((plano) => {
                 plano.classList.add('active');
                 textoPlano[1].classList.add('active');
-                periodo = 'yearly';
+                periodo = 'Yearly';
             });
             planoMensal.forEach((plano) => {
                 plano.classList.remove('active');
@@ -134,7 +135,7 @@ const telaPlan = () => {
             planoAnual.forEach((plano) => {
                 plano.classList.remove('active');
                 textoPlano[1].classList.remove('active');
-                periodo = 'monthly'
+                periodo = 'Monthly'
             });
             planoMensal.forEach((plano) => {
                 plano.classList.add('active');
@@ -148,6 +149,12 @@ const telaPlan = () => {
         btnArcade.classList.add('active');
         btnAdvanced.classList.remove('active');
         btnPro.classList.remove('active');
+
+        if(periodo == 'Monthly') {
+            valor = 9;
+        } else if (periodo == 'Yearly') {
+            valor = 90;
+        }
     });
 
     btnAdvanced.addEventListener('click', () => {
@@ -155,6 +162,12 @@ const telaPlan = () => {
         btnAdvanced.classList.add('active');
         btnArcade.classList.remove('active');
         btnPro.classList.remove('active');
+
+        if(periodo == 'Monthly') {
+            valor = 12;
+        } else if (periodo == 'Yearly') {
+            valor = 120;
+        }
     });
 
     btnPro.addEventListener('click', () => {
@@ -162,17 +175,26 @@ const telaPlan = () => {
         btnPro.classList.add('active');
         btnArcade.classList.remove('active');
         btnAdvanced.classList.remove('active');
+
+        if(periodo == 'Monthly') {
+            valor = 15;
+        } else if (periodo == 'Yearly') {
+            valor = 150;
+        }
     });
+    
     
     
     btnNext.addEventListener('click', () => {
 
         if(plano == '' || plano == null) {
             textoErro.classList.add('active');
-            
-
         } else {
             inicio(2, 2);
+
+            console.log(plano);
+            console.log(periodo);
+            console.log(valor);
         }
     });
     
