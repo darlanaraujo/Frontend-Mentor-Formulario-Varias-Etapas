@@ -18,14 +18,36 @@ const planoMensal = document.querySelectorAll('#planoMensal');
 const planoAnual = document.querySelectorAll('#planoAnual');
 const textoPlano = document.querySelectorAll('#textoPlano');
 
+// Componentes Tela Add
+const valoresAddMo = document.querySelectorAll('#valorAddMo');
+const valoresAddYr = document.querySelectorAll('#valorAddYr');
+const checkService = document.querySelector('#checkService');
+const checkStorage = document.querySelector('#checkStorage');
+const checkProfile = document.querySelector('#checkProfile');
+
+// Componentes Tela Finishing
+const planoEscolhido = document.querySelector('#planoEscolhido');
+const valorPlano = document.querySelector('#valorPlano');
+const periodoEscolhido = document.querySelector('#periodoEscolhido');
+const periodoTotal = document.querySelector('#periodoTotal');
+const periodoPlano = document.querySelectorAll('#periodoPlano');
+const addService = document.querySelector('#addService');
+const addStorage = document.querySelector('#addStorage');
+const addProfile = document.querySelector('#addProfile');
+const valorAddService = document.querySelector('#valorAddService');
+const valorAddStorage = document.querySelector('#valorAddStorage');
+const valorAddProfile = document.querySelector('#valorAddProfile');
+const valorTotal = document.querySelector('#valorTotal');
+
 // Variáveis Globais;
 let indice = 0;
 let janela = 0;
 
-let nome, email, fone;
-let plano = 'Monthly'
+let nome, email, fone, plano, valor, soma;
 let periodo = 'Monthly';
-let valor = 0;
+let periodoMin = 'month';
+let periodoAbreviado = 'mo';
+let service, storage, profile, valorService, valorStorage, valorProfile;
 
 // Funções
 const inicio = (step, tela) => {
@@ -113,19 +135,25 @@ const telaInfo = () => {
 
     
 };
-telaInfo();
 
 const telaPlan = () => {
     
     textoErro.classList.remove('active');
 
     checkPeriodo.addEventListener('click', () => {
+        btnArcade.classList.remove('active');
+        btnAdvanced.classList.remove('active');
+        btnPro.classList.remove('active');
+        valor = 0;
+        plano = '';
     
         if(checkPeriodo.checked) {
             planoAnual.forEach((plano) => {
                 plano.classList.add('active');
                 textoPlano[1].classList.add('active');
                 periodo = 'Yearly';
+                periodoMin = 'year';
+                periodoAbreviado = 'yr';
             });
             planoMensal.forEach((plano) => {
                 plano.classList.remove('active');
@@ -136,6 +164,8 @@ const telaPlan = () => {
                 plano.classList.remove('active');
                 textoPlano[1].classList.remove('active');
                 periodo = 'Monthly'
+                periodoMin = 'month';
+                periodoAbreviado = 'mo';
             });
             planoMensal.forEach((plano) => {
                 plano.classList.add('active');
@@ -192,26 +222,108 @@ const telaPlan = () => {
         } else {
             inicio(2, 2);
 
-            console.log(plano);
-            console.log(periodo);
-            console.log(valor);
+            telaAdd();
         }
     });
     
     
 };
 
+const telaAdd = () => {
+    if(periodo == 'Monthly') {
+        valorService = 1;
+        valorStorage = 2;
+        valorProfile = 2;
+
+        valoresAddMo.forEach((item) => {
+            item.classList.add('active');
+        });
+
+        valoresAddYr.forEach((item) => {
+            item.classList.remove('active');
+        });
+    } else if (periodo = 'Yearly') {
+        valorService = 10;
+        valorStorage = 20;
+        valorProfile = 20;
+
+        valoresAddMo.forEach((item) => {
+            item.classList.remove('active');
+        });
+
+        valoresAddYr.forEach((item) => {
+            item.classList.add('active');
+        });
+    }
+
+    btnNext.addEventListener('click', () => {
+
+        if(checkService.checked) {
+            service = true;
+        } else {
+            service = false;
+        }
+
+        if(checkStorage.checked) {
+            storage = true;
+        } else {
+            storage = false;
+        }
+
+        if(checkProfile.checked) {
+            profile = true;
+        } else {
+            profile = false;
+        }
+
+        inicio(3, 3);
+        telaFinishing();
+
+    });
+};
+
+const telaFinishing = () => {
+    planoEscolhido.innerHTML = plano;
+    periodoEscolhido.innerHTML = periodo;
+    periodoTotal.innerHTML = periodoMin;
+
+    valorPlano.innerHTML = valor;
+    valorAddService.innerHTML = valorService;
+    valorAddStorage.innerHTML = valorStorage;
+    valorAddProfile.innerHTML = valorProfile;
+
+    soma += valor;
+    
+    periodoPlano.forEach((item) => {
+        item.innerHTML = periodoAbreviado;
+    });
+
+    if(service) {
+        addService.classList.add('active');
+        soma += valorService;
+    } else {
+        addService.classList.remove('active');
+        soma -= valorService;
+    }
+
+    if(storage) {
+        addStorage.classList.add('active');
+        soma += valorStorage;
+    } else {
+        addStorage.classList.remove('active');
+        soma -= valorStorage;
+    }
+
+    if(profile) {
+        addProfile.classList.add('active');
+        soma += valorProfile;
+    } else {
+        addProfile.classList.remove('active');
+        soma -= valorAddProfile;
+    }
+
+    valorTotal.innerHTML = soma;
+};
+
 inicio(0, 0);
-// btnNext.addEventListener('click', () => {
-
-//     if(janela == 0){
-//         telaInfo();
-//     } else if(janela == 1) {
-//         telaPlan();
-//     }
-// });
-
-// setTimeout(() => {
-//     telaInfo()
-//     telaPlan();
-// }, 1);
+telaInfo();

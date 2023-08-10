@@ -177,7 +177,8 @@
                                     <p class="texto">Access to multiplayer games</p>
                                 </div>
                             </div>
-                            <p class="valor">+$1/mo</p>
+                            <p class="valor" id="valorAddMo">+$1/mo</p>
+                            <p class="valor" id="valorAddYr">+$10/yr</p>
                         </label>
 
                         <label class="label-add " for="checkStorage"> <!-- active -->
@@ -191,7 +192,8 @@
                                     <p class="texto">Extra 1TB of cloud save</p>
                                 </div>
                             </div>
-                            <p class="valor">+$2/mo</p>
+                            <p class="valor" id="valorAddMo">+$2/mo</p>
+                            <p class="valor" id="valorAddYr">+$20/yr</p>
                         </label>
 
                         <label class="label-add " for="checkProfile"> <!-- active -->
@@ -205,7 +207,8 @@
                                     <p class="texto">Custom theme on your profile</p>
                                 </div>
                             </div>
-                            <p class="valor">+$2/mo</p>
+                            <p class="valor" id="valorAddMo">+$2/mo</p>
+                            <p class="valor" id="valorAddYr">+$20/yr</p>
                         </label>
                     </div>
                 </div> 
@@ -218,22 +221,30 @@
                         <div class="box-resumo">
                             <div class="plano">
                                 <div class="coluna">
-                                    <p class="texto-plano" id="planoEscolhido">Plano (<span id="planoEscolhido">Monthly</span>)</p>
+                                    <p class="texto-plano"><span id="planoEscolhido">Plano</span> (<span id="periodoEscolhido">Monthly</span>)</p>
                                     <a class="btn-reinicio" id="btnReinicio" href="#">Change</a>
                                 </div>
-                                <p class="valor-plano" id="valorPlanoEscolhido">$<span id="valorPlano">0</span>/<span id="periodoPlano">mo</span></p>
+                                <p class="valor-plano">$<span id="valorPlano">0</span>/<span id="periodoPlano">mo</span></p>
                             </div>
-                            <div class="add">
+                            <div class="box-add">
                                 <!-- Estrutura que deve ser criada no JS -->
-                                <div class="add">
-                                    <p class="texto-add">teste</p>
-                                    <p class="valor-add">+$ <span id="valorAdd">0</span>/<span id="periodoAdd">mo</span></p>
+                                <div class="add" id="addService">
+                                    <p class="texto-add">Online service</p>
+                                    <p class="valor-add">+$ <span id="valorAddService">0</span>/<span id="periodoPlano">mo</span></p>
+                                </div>
+                                <div class="add" id="addStorage">
+                                    <p class="texto-add">Larger storage</p>
+                                    <p class="valor-add">+$ <span id="valorAddStorage">0</span>/<span id="periodoPlano">mo</span></p>
+                                </div>
+                                <div class="add" id="addProfile">
+                                    <p class="texto-add">Customizable profile</p>
+                                    <p class="valor-add">+$ <span id="valorAddProfile">0</span>/<span id="periodoPlano">mo</span></p>
                                 </div>
                             </div>
                         </div>
                         <div class="box-total">
-                            <p class="texto-total">Total (per <span class="periodoTotal">month</span>)</p>
-                            <p class="valor-total">+$<span id="valorTotal">0</span>/<span id="periodoTotal">mo</span></p>
+                            <p class="texto-total">Total (per <span id="periodoTotal">month</span>)</p>
+                            <p class="valor-total">+$<span id="valorTotal">0</span>/<span id="periodoPlano">mo</span></p>
                         </div>
                     </div>
                </div>

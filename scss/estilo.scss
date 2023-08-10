@@ -450,6 +450,11 @@
                         .valor {
                             color: $roxo;
                             font-weight: 200;
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
                         }
                     }
                 }
@@ -492,10 +497,14 @@
 
                     .add {
                         margin-top: 15px;
-                        display: flex;
                         justify-content: space-between;
                         align-items: center;
                         width: 100%;
+                        display: none;
+
+                        &.active {
+                            display: flex;
+                        }
                         
                         .texto-add {
                             font-size: 14px;

@@ -450,6 +450,11 @@
 .page .modal .contente .contente-add .box-add .label-add .valor {
   color: #473dff;
   font-weight: 200;
+  display: none;
+}
+
+.page .modal .contente .contente-add .box-add .label-add .valor.active {
+  display: block;
 }
 
 .page .modal .contente .contente-finishing .box-resumo {
@@ -487,10 +492,14 @@
 
 .page .modal .contente .contente-finishing .box-resumo .add {
   margin-top: 15px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  display: none;
+}
+
+.page .modal .contente .contente-finishing .box-resumo .add.active {
+  display: flex;
 }
 
 .page .modal .contente .contente-finishing .box-resumo .add .texto-add {
