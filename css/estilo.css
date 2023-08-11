@@ -583,6 +583,7 @@
 }
 
 .page .modal .contente .footer .btn {
+  width: 124px;
   padding: 15px 20px;
   background-color: #02295a;
   border: none;
@@ -601,6 +602,10 @@
 
 .page .modal .contente .footer .btn.confirm:hover {
   opacity: .7;
+}
+
+.page .modal .contente .footer .btn.remove {
+  display: none;
 }
 
 .page .modal .contente .footer .btn-back {

@@ -38,6 +38,7 @@ const valorAddService = document.querySelector('#valorAddService');
 const valorAddStorage = document.querySelector('#valorAddStorage');
 const valorAddProfile = document.querySelector('#valorAddProfile');
 const valorTotal = document.querySelector('#valorTotal');
+const btnReinicio = document.querySelector('#btnReinicio');
 
 // Variáveis Globais;
 let indice = 0;
@@ -62,17 +63,19 @@ const inicio = (step, tela) => {
         telas.classList.remove('active');
     });
 
-    if(janela == 0) {
+    if(janela == 0 || janela == 4) {
         btnBack.classList.remove('active');
+        if(janela == 4) {
+            btnNext.classList.add('remove');
+        }
     } else {
         btnBack.classList.add('active');
     }
 
     sidebarIndices[step].classList.add('active');
     telasContente[tela].classList.add('active');
-
+    telaInfo();
 };
-
 
 const validaEmail = (email) => {
     let regex = /\S+@\S+\.\S+/;
@@ -86,6 +89,11 @@ btnBack.addEventListener('click', () => {
 
     if(indice > 0) {
         indice--;
+    }
+
+    if(janela < 4) {
+        btnNext.innerHTML = 'Next Step';
+        btnNext.classList.remove('confirm');
     }
 
     inicio(indice, janela);
@@ -126,11 +134,12 @@ const telaInfo = () => {
             }
             
         });
-    
+
         if(nome != '' && email != '' && fone != '') {
             inicio(1, 1);
             telaPlan();
         }
+    
     });
 
     
@@ -221,11 +230,9 @@ const telaPlan = () => {
             textoErro.classList.add('active');
         } else {
             inicio(2, 2);
-
             telaAdd();
         }
     });
-    
     
 };
 
@@ -278,11 +285,14 @@ const telaAdd = () => {
 
         inicio(3, 3);
         telaFinishing();
-
     });
 };
 
 const telaFinishing = () => {
+
+    btnNext.classList.add('confirm');
+    btnNext.innerHTML = 'Confirm';
+
     planoEscolhido.innerHTML = plano;
     periodoEscolhido.innerHTML = periodo;
     periodoTotal.innerHTML = periodoMin;
@@ -292,7 +302,7 @@ const telaFinishing = () => {
     valorAddStorage.innerHTML = valorStorage;
     valorAddProfile.innerHTML = valorProfile;
 
-    soma += valor;
+    soma = valor;
     
     periodoPlano.forEach((item) => {
         item.innerHTML = periodoAbreviado;
@@ -303,7 +313,6 @@ const telaFinishing = () => {
         soma += valorService;
     } else {
         addService.classList.remove('active');
-        soma -= valorService;
     }
 
     if(storage) {
@@ -311,7 +320,6 @@ const telaFinishing = () => {
         soma += valorStorage;
     } else {
         addStorage.classList.remove('active');
-        soma -= valorStorage;
     }
 
     if(profile) {
@@ -319,11 +327,21 @@ const telaFinishing = () => {
         soma += valorProfile;
     } else {
         addProfile.classList.remove('active');
-        soma -= valorAddProfile;
     }
 
     valorTotal.innerHTML = soma;
+
+    btnReinicio.addEventListener('click', charge);
+
+    btnNext.addEventListener('click', () => {
+        inicio(3, 4);
+    });
+
 };
 
+const charge = () => {
+    location.reload(true);
+};
+
+// Execução do programa;
 inicio(0, 0);
-telaInfo();

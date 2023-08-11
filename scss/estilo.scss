@@ -589,6 +589,7 @@
                 }
 
                 .btn {
+                    width: 124px;
                     padding: 15px 20px;
                     background-color: $azulMarinho;
                     border: none;
@@ -606,6 +607,10 @@
                         &:hover {
                             opacity: .7;
                         }
+                    }
+
+                    &.remove {
+                        display: none;
                     }
                 }
 
