@@ -65,15 +65,16 @@ const inicio = (step, tela) => {
 
     if(janela == 0 || janela == 4) {
         btnBack.classList.remove('active');
-        if(janela == 4) {
-            btnNext.classList.add('remove');
-        }
+        // if(janela == 4) {
+        //     btnNext.classList.add('remove');
+        // }
     } else {
         btnBack.classList.add('active');
     }
 
     sidebarIndices[step].classList.add('active');
     telasContente[tela].classList.add('active');
+
     telaInfo();
 };
 
@@ -335,8 +336,13 @@ const telaFinishing = () => {
 
     btnNext.addEventListener('click', () => {
         inicio(3, 4);
+        telaThanks();
     });
+    
+};
 
+const telaThanks = () => {
+    btnNext.classList.add('remove');
 };
 
 const charge = () => {
